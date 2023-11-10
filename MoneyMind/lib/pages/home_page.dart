@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   //data em que espira o cartão
                   Text(
-                    '11/24',
+                    '11/26',
                       style: TextStyle(
                         color: Colors.white,  
                         fontSize: 17,  
