@@ -52,11 +52,78 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 
-    
+        const SizedBox(height: 25),
+
           //Cards
+          Container(
+            //Largura do container
+            width: 350,
+            //aumentar a grossura do container
+            padding:const EdgeInsets.all(20),       
+            decoration: BoxDecoration(
+              // cor do fundo do container 
+              color: const Color.fromARGB(255, 106, 151, 196),
+              //bordas redondas
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //formatação balance
+                SizedBox(
+                      height: 5,
+                      ),
+                Text(
+                  'Balance',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                    ),
+                ),
+                    SizedBox(
+                      height: 10,
+                      ),
+                //dinheiro na conta
+                Text(
+                  '\$5,250.20',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 33,
+                    ),
+                  ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                //row funciona como um organizar de widegts horizontalmente
+                // assim como o column
+                Row(       
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,     
+                  children: [
+                  //numero de cartão
+                  Text(
+                    '**** 3456',
+                      style: TextStyle(
+                        color: Colors.white,  
+                        fontSize: 17,  
+                      ),
+                    ),
+                  //data em que espira o cartão
+                  Text(
+                    '11/24',
+                      style: TextStyle(
+                        color: Colors.white,  
+                        fontSize: 17,  
+                      ),
+                    ),
+                ],)
+                
+              ],
+            ),
+          ),
 
-          //3 buttons -> send + pay + bills 
-
+          //3 buttons -> send + pay + bills
+          // 
           //column -> stats + transactions
 
       ]),
