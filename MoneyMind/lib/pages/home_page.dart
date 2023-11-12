@@ -1,3 +1,4 @@
+import 'package:app/util/my_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -54,76 +55,44 @@ class _HomePageState extends State<HomePage> {
 
         const SizedBox(height: 25),
 
-          //Cards
-          Container(
-            //Largura do container
-            width: 350,
-            //aumentar a grossura do container
-            padding:const EdgeInsets.all(20),       
-            decoration: BoxDecoration(
-              // cor do fundo do container 
-              color: const Color.fromARGB(255, 106, 151, 196),
-              //bordas redondas
-              borderRadius: BorderRadius.circular(16),
+        //Cards
+        // ignore: sized_box_for_whitespace
+        Container(
+          height: 200,
+          child: PageView(
+              scrollDirection: Axis.horizontal,
+          children: const [
+            // 1º cartão
+            MyCard(
+              balance: 5250.50, 
+              cardNumber: 12345678,
+              experyMonth: 10,
+              experyYear: 24,
+              color: Color.fromARGB(255, 12, 67, 112),
+            ),   
+            // 2º cartão
+            MyCard(
+              balance: 100000.50, 
+              cardNumber: 87654321,
+              experyMonth: 12,
+              experyYear: 30,
+              color: Color.fromARGB(255, 67, 168, 67),
             ),
-            child: const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                //formatação balance
-                SizedBox(
-                      height: 5,
-                      ),
-                Text(
-                  'Balance',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
-                    ),
-                ),
-                    SizedBox(
-                      height: 10,
-                      ),
-                //dinheiro na conta
-                Text(
-                  '\$5,250.20',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 33,
-                    ),
-                  ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                //row funciona como um organizar de widegts horizontalmente
-                // assim como o column
-                Row(       
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,     
-                  children: [
-                  //numero de cartão
-                  Text(
-                    '**** 3456',
-                      style: TextStyle(
-                        color: Colors.white,  
-                        fontSize: 17,  
-                      ),
-                    ),
-                  //data em que espira o cartão
-                  Text(
-                    '11/26',
-                      style: TextStyle(
-                        color: Colors.white,  
-                        fontSize: 17,  
-                      ),
-                    ),
-                ],)
-                
-              ],
+            // 3º cartão
+            MyCard(
+              balance: 1200.62, 
+              cardNumber: 3283723723,
+              experyMonth: 06,
+              experyYear: 22,
+              color: Color.fromARGB(255, 194, 130, 186),
             ),
-          ),
 
+          
+
+          ]),
+        ),
           //3 buttons -> send + pay + bills
-          // 
+          
           //column -> stats + transactions
 
       ]),
