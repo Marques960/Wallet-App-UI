@@ -7,6 +7,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_literals_to_create_immutables
 // ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: sized_box_for_whitespace
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -67,7 +68,6 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(height: 25),
 
         //Cards
-        // ignore: sized_box_for_whitespace
         Container(
           height: 200,
           child: PageView(
@@ -140,6 +140,58 @@ class _HomePageState extends State<HomePage> {
           ),
           SizedBox(height: 25,),       
           //column -> stats + transactions
+
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(children: [
+              //statistics
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  //icon
+                  Row(children: [
+                       Container(
+                    height: 80,
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Image.asset('lib/Icons/statistics.png'),
+                  ),
+
+                  SizedBox(
+                    width: 28,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Statistics',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),      
+                        ),
+                          SizedBox(
+                            height: 8
+                          ),
+                      Text(
+                        'Payments and Income',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.grey[500],
+                        ), 
+                        ),
+                    ],
+                  ),
+                  ]),   
+                  Icon(Icons.arrow_forward_ios),
+              ],)
+          
+              //transactions
+            ],),
+          )
       ]),
       )
     );
