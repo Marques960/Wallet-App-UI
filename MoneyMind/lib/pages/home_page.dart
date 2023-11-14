@@ -1,5 +1,12 @@
+import 'package:app/util/my_button.dart';
 import 'package:app/util/my_card.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+// ignore_for_file: unnecessary_import
+// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: avoid_unnecessary_containers
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,6 +16,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  //pageControler
+  final _controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +72,7 @@ class _HomePageState extends State<HomePage> {
           height: 200,
           child: PageView(
               scrollDirection: Axis.horizontal,
+              controller: _controller,
           children: const [
             // 1º cartão
             MyCard(
@@ -86,15 +98,48 @@ class _HomePageState extends State<HomePage> {
               experyYear: 22,
               color: Color.fromARGB(255, 194, 130, 186),
             ),
-
-          
-
           ]),
         ),
+        SizedBox(height: 10,),
+        //3 botões de baixo para mostrar o scrool view
+        SmoothPageIndicator(
+          controller: _controller,
+           count: 3,
+           effect: ExpandingDotsEffect(
+            activeDotColor: Colors.grey.shade800,
+           ),
+          ),
+
+          SizedBox(height: 25,),
+
           //3 buttons -> send + pay + bills
           
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+              //send button      
+              MyButton(
+                iconImagePath: 'lib/Icons/send-money.png',
+                 buttonText: 'Send',
+                ),
+          
+              //pay button
+               MyButton(
+                iconImagePath: 'lib/Icons/credit-card.png',
+                 buttonText: 'Pay',
+                 ),
+                 
+              //bills button
+               MyButton(
+                iconImagePath: 'lib/Icons/bill.png',
+                 buttonText: 'Bills',
+                 ),
+            ]),
+          ),
+          SizedBox(height: 25,),       
           //column -> stats + transactions
-
       ]),
       )
     );

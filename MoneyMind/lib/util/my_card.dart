@@ -85,6 +85,7 @@ class MyCard extends StatelessWidget {
                   ), 
 
                   SizedBox( height: 12,),
+                  //numero de cartão
                   //row funciona como um organizar de widegts horizontalmente
                   // assim como o column
                   Row(             
@@ -99,8 +100,8 @@ class MyCard extends StatelessWidget {
                             fontSize: 17,  
                           ),
                         ),
-                      ),
-                    //numero de cartão
+                      ),    
+                    //data em que espira o cartão
                     Container(
                       margin: EdgeInsets.only(right: 15.0),
                       child: Text(          
@@ -110,9 +111,7 @@ class MyCard extends StatelessWidget {
                           fontSize: 17,  
                         ),
                       ),
-                    ),
-                    //data em que espira o cartão
-                    
+                    ),     
                   ]),
                 ],
               ),
