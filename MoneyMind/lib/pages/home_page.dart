@@ -80,15 +80,15 @@ class _HomePageState extends State<HomePage> {
               cardNumber: 12345678,
               experyMonth: 10,
               experyYear: 24,
-              color: Color.fromARGB(255, 12, 67, 112),
+              color: Color.fromRGBO(2, 69, 163, 1),
             ),   
             // 2º cartão
             MyCard(
-              balance: 100000.50, 
+              balance: 10000.50, 
               cardNumber: 87654321,
               experyMonth: 12,
               experyYear: 30,
-              color: Color.fromARGB(255, 67, 168, 67),
+              color: Color.fromARGB(255, 91, 176, 91),
             ),
             // 3º cartão
             MyCard(
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
               cardNumber: 3283723723,
               experyMonth: 06,
               experyYear: 22,
-              color: Color.fromARGB(255, 194, 130, 186),
+              color: Color.fromARGB(255, 201, 137, 192),
             ),
           ]),
         ),
