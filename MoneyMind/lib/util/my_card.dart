@@ -44,9 +44,7 @@ class MyCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //formatação balance
-                  SizedBox(
-                        height: 5,
-                        ), 
+                  SizedBox(height: 5), 
                   //Balance
                   Container(
                     margin: EdgeInsets.only(left: 13.0),

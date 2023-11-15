@@ -1,5 +1,6 @@
 import 'package:app/util/my_button.dart';
 import 'package:app/util/my_card.dart';
+import 'package:app/util/my_list_tile.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -25,6 +26,49 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      //------------------------------------------------------
+      //botão central com simbolo de dolar
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Color.fromARGB(255, 25, 113, 228),
+        child: Icon(
+          Icons.monetization_on,
+          size: 28,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked , 
+      // barra de navegação 
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[400],
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+            //home
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.home,
+                  size: 36,
+                  color: Color.fromARGB(255, 92, 145, 216),
+                ),
+              ),
+        
+              //settings
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.settings,
+                  size: 36,
+                  color: Color.fromARGB(255, 92, 145, 216),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+       //------------------------------------------------------
       body:  SafeArea(
         child: Column(children: [
           //App Bar
@@ -145,51 +189,19 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(25.0),
             child: Column(children: [
               //statistics
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  //icon
-                  Row(children: [
-                       Container(
-                    height: 80,
-                    padding: EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Image.asset('lib/Icons/statistics.png'),
-                  ),
+              MyListTile(
+                iconImagePath: 'lib/Icons/credit-card.png',
+                tileName: 'Statistcs',
+                tileSubtitle: 'Payments and Income',
+              ), 
 
-                  SizedBox(
-                    width: 28,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Statistics',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),      
-                        ),
-                          SizedBox(
-                            height: 8
-                          ),
-                      Text(
-                        'Payments and Income',
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.grey[500],
-                        ), 
-                        ),
-                    ],
-                  ),
-                  ]),   
-                  Icon(Icons.arrow_forward_ios),
-              ],)
-          
               //transactions
+               MyListTile(
+                iconImagePath: 'lib/Icons/transaction.png',
+                tileName: 'Transactions',
+                tileSubtitle: 'Transaction History',
+              ),
+
             ],),
           )
       ]),
