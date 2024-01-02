@@ -1,1 +1,1 @@
-- [ Linkedin ](https://www.linkedin.com/in/rafael-marques-69b559177/)
+Static Flutter Gestion Page
